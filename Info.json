@@ -1,0 +1,18 @@
+{
+  "id": 3,
+  "name": "name",
+  "coordinates": {
+    "x": 4,
+    "y": 4.4
+  },
+  "creationDate": "04-04-2024 22:54",
+  "health": 132,
+  "loyal": true,
+  "height": 43.0,
+  "weaponType": "BOLT_PISTOL",
+  "chapter": {
+    "name": "er",
+    "parentLegion": "",
+    "world": "werdwew"
+  }
+}
