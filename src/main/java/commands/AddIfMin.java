@@ -15,6 +15,11 @@ import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
 public class AddIfMin extends Command implements Methods {
+    public AddIfMin() {
+        super();
+        this.commandType = CommandType.ELEMENT_ARGUMENTED;
+    }
+
     public final String name = "add_if_min";
 
     public static AddIfMin staticFactory(String[] args,String value){
@@ -24,10 +29,7 @@ public class AddIfMin extends Command implements Methods {
         return  inst;
     };
 
-    public AddIfMin() {
-        super();
-        this.commandType = CommandType.ELEMENT_ARGUMENTED;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

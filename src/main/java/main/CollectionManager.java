@@ -19,13 +19,14 @@ import java.util.stream.Stream;
 import static utilites.ObjectConverter.toJson;
 
 public class CollectionManager {
-    private static CollectionManager manager = null;
-    public Date lastUpdated;
-    private PriorityQueue<SpaceMarine> collection = new PriorityQueue<>();
-
     private CollectionManager() {
         this.collection = new PriorityQueue<>();
     }
+    private static CollectionManager manager = null;
+    public Date lastUpdated;
+    private PriorityQueue<SpaceMarine> collection;
+
+
 
     public static CollectionManager getCollectionManager() {
         if (manager == null) {

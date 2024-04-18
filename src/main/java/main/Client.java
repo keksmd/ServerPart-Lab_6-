@@ -3,12 +3,13 @@ package main;
 import java.nio.channels.SocketChannel;
 
 public class Client {
-    boolean firstMessageFromClient = true;
-    SocketChannel channel;
 
     public Client(SocketChannel c) {
         channel = c;
     }
+    boolean firstMessageFromClient = true;
+    SocketChannel channel;
+
 
     public boolean isFirstMessageFromClient() {
         return firstMessageFromClient;

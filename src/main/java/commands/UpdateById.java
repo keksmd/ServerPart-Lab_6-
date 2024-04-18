@@ -7,6 +7,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class UpdateById extends Command implements Methods {
+    public UpdateById() {
+        super();
+        this.commandType = CommandType.ELEMENT_AND_VALUE_ARGUMENTED;
+    }
     public final String name = "update_by_id";
     public static UpdateById staticFactory(String[] args,String value){
         UpdateById inst =  new UpdateById();
@@ -14,10 +18,7 @@ public class UpdateById extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-    public UpdateById() {
-        super();
-        this.commandType = CommandType.ELEMENT_AND_VALUE_ARGUMENTED;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

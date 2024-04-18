@@ -15,6 +15,10 @@ import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
 public class AddIfMax extends Command implements Methods {
+    public AddIfMax() {
+        super();
+        this.commandType = CommandType.ELEMENT_ARGUMENTED;
+    }
     public final String name = "add_if_max";
     public static AddIfMax staticFactory(String[] args,String value){
         AddIfMax inst =  new AddIfMax();
@@ -22,11 +26,6 @@ public class AddIfMax extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-
-    public AddIfMax() {
-        super();
-        this.commandType = CommandType.ELEMENT_ARGUMENTED;
-    }
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

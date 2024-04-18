@@ -7,6 +7,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class FilterHeight extends Command implements Methods {
+    public FilterHeight() {
+        super();
+        this.commandType = CommandType.VALUE_ARGUMENTED;
+    }
     public final String name = "filter_greater_than_height";
     public static FilterHeight staticFactory(String[] args,String value){
         FilterHeight inst =  new FilterHeight();
@@ -15,10 +19,7 @@ public class FilterHeight extends Command implements Methods {
         return  inst;
     };
 
-    public FilterHeight() {
-        super();
-        this.commandType = CommandType.VALUE_ARGUMENTED;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

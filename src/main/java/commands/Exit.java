@@ -6,6 +6,10 @@ import main.Response;
 import utilites.interfaces.Methods;
 
 public class Exit extends Command implements Methods {
+    public Exit() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
 
     public final String name = "exit";
     public static Exit staticFactory(String[] args,String value){
@@ -15,10 +19,7 @@ public class Exit extends Command implements Methods {
         return  inst;
     };
 
-    public Exit() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

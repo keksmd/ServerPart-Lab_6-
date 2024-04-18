@@ -7,6 +7,11 @@ import static main.App.collectionManager;
 
 public class Clear extends Command implements Methods {
 
+
+    public Clear() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "clear";
     public static Clear staticFactory(String[] args,String value){
         Clear inst =  new Clear();
@@ -14,10 +19,7 @@ public class Clear extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-    public Clear() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

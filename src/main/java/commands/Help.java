@@ -10,6 +10,10 @@ import java.util.stream.Collectors;
 
 
 public class Help extends Command implements Methods {
+    public Help() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "help";
     public static Help staticFactory(String[] args,String value){
         Help inst =  new Help();
@@ -17,10 +21,7 @@ public class Help extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-    public Help() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

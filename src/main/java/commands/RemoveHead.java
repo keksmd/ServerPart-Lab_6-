@@ -7,6 +7,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class RemoveHead extends Command implements Methods {
+    public RemoveHead() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "remove_head";
     public static RemoveHead staticFactory(String[] args,String value){
         RemoveHead inst =  new RemoveHead();
@@ -15,10 +19,7 @@ public class RemoveHead extends Command implements Methods {
         return  inst;
     };
 
-    public RemoveHead() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

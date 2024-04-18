@@ -11,6 +11,10 @@ import java.util.Arrays;
 import static main.App.collectionManager;
 
 public class GroupByWeapon extends Command implements Methods {
+    public GroupByWeapon() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "group_counting_by_weapon_type";
     public static GroupByWeapon staticFactory(String[] args,String value){
         GroupByWeapon inst =  new GroupByWeapon();
@@ -19,10 +23,7 @@ public class GroupByWeapon extends Command implements Methods {
         return  inst;
     };
 
-    public GroupByWeapon() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

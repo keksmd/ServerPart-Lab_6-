@@ -1,7 +1,7 @@
 package utilites;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import exceptions.LOLDIDNTREAD;
+import exceptions.MessageWasNotReadedSuccessfull;
 import main.Request;
 import main.Response;
 
@@ -13,8 +13,9 @@ import static main.App.log;
 
 
 public class ServerMessaging {
+    private ServerMessaging(){};
 
-    public static Request nioRead(SocketChannel clientChannel) throws IOException, LOLDIDNTREAD {
+    public static Request nioRead(SocketChannel clientChannel) throws IOException, MessageWasNotReadedSuccessfull {
         ByteBuffer buf = ByteBuffer.allocate(clientChannel.socket().getReceiveBufferSize());
         int readed = clientChannel.read(buf);
         if (readed > 0) {
@@ -24,7 +25,7 @@ public class ServerMessaging {
             })));
             return ObjectConverter.deserialize(msg, new TypeReference<>() {
             });
-        } else throw new LOLDIDNTREAD();
+        } else throw new MessageWasNotReadedSuccessfull();
     }
 
     public static void nioSend(SocketChannel clientChannel, String message) throws IOException {

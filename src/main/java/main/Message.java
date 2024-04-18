@@ -6,9 +6,6 @@ import java.util.ArrayList;
 public abstract class Message {
     ArrayList<String> messages = new ArrayList<>();
 
-    public Message() {
-    }
-
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();

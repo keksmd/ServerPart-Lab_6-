@@ -8,6 +8,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class PrintFieldDescendingLoyal extends Command implements Methods {
+    public PrintFieldDescendingLoyal() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
 
     public final String name = "print_field_descending_loyal";
     public static PrintFieldDescendingLoyal staticFactory(String[] args,String value){
@@ -17,10 +21,7 @@ public class PrintFieldDescendingLoyal extends Command implements Methods {
         return  inst;
     };
 
-    public PrintFieldDescendingLoyal() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

@@ -8,6 +8,10 @@ import static main.App.collectionManager;
 
 
 public class Save extends Command implements Methods {
+    public Save() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "save";
     public static Save staticFactory(String[] args,String value){
         Save inst =  new Save();
@@ -16,10 +20,7 @@ public class Save extends Command implements Methods {
         return  inst;
     };
 
-    public Save() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

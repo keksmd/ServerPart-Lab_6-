@@ -8,6 +8,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class RemoveById extends Command implements Methods {
+    public RemoveById() {
+        super();
+        this.commandType = CommandType.VALUE_ARGUMENTED;
+    }
 
     public final String name = "remove_by_id";
     public static RemoveById staticFactory(String[] args,String value){
@@ -17,10 +21,7 @@ public class RemoveById extends Command implements Methods {
         return  inst;
     };
 
-    public RemoveById() {
-        super();
-        this.commandType = CommandType.VALUE_ARGUMENTED;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

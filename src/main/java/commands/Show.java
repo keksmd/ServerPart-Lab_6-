@@ -7,6 +7,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class Show extends Command implements Methods {
+    public Show() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "show";
     public static Show staticFactory(String[] args,String value){
         Show inst =  new Show();
@@ -14,11 +18,6 @@ public class Show extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-    public Show() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
-
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);
         if (collectionManager.isEmpty()) {

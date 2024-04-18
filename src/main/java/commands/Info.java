@@ -8,6 +8,10 @@ import utilites.interfaces.Methods;
 import static main.App.collectionManager;
 
 public class Info extends Command implements Methods {
+    public Info() {
+        super();
+        this.commandType = CommandType.WITHOUT_ARGUMENTS;
+    }
     public final String name = "info";
     public static Info staticFactory(String[] args,String value){
         Info inst =  new Info();
@@ -15,10 +19,7 @@ public class Info extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-    public Info() {
-        super();
-        this.commandType = CommandType.WITHOUT_ARGUMENTS;
-    }
+
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);

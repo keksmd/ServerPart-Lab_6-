@@ -32,23 +32,6 @@ public class Command implements Methods {
 
     }
 
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-
-
-    public CommandType getCommandType() {
-        return commandType;
-    }
-
-    public void setCommandType(CommandType commandType) {
-        this.commandType = commandType;
-    }
 
     public Command revalidate(String name) {
         return extractCommand(name).castInto(this);
@@ -67,44 +50,6 @@ public class Command implements Methods {
 
         return answer;
     }
-
-    public String[] getArgs() {
-        return args;
-    }
-
-    public void setArgs(String[] args) {
-        this.args = args;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append("***** ").append(this.getClass()).append(" Details *****\n");
-        for (Field f : this.getClass().getFields()) {
-            try {
-                f.setAccessible(true);
-                if (f.get(this) == null) {
-                    s.append(f.getName()).append("=").append("null").append("\n");
-                } else {
-                    s.append(f.getName()).append("=").append(f.get(this).toString()).append("\n");
-                }
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            }
-        }
-        s.append("*****************************");
-
-        return s.toString();
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     /**
      * Метод, определяющий команду по вводу str
      *
@@ -137,5 +82,60 @@ public class Command implements Methods {
         return new NotFound();
 
     }
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("***** ").append(this.getClass()).append(" Details *****\n");
+        for (Field f : this.getClass().getFields()) {
+            try {
+                f.setAccessible(true);
+                if (f.get(this) == null) {
+                    s.append(f.getName()).append("=").append("null").append("\n");
+                } else {
+                    s.append(f.getName()).append("=").append(f.get(this).toString()).append("\n");
+                }
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        s.append("*****************************");
+
+        return s.toString();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String[] getArgs() {
+        return args;
+    }
+
+    public void setArgs(String[] args) {
+        this.args = args;
+    }
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+
+
+    public CommandType getCommandType() {
+        return commandType;
+    }
+
+    public void setCommandType(CommandType commandType) {
+        this.commandType = commandType;
+    }
+
+
 
 }

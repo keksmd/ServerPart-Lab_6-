@@ -13,6 +13,15 @@ import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
 public class Add extends Command implements Methods {
+    public Add() {
+        super();
+        this.commandType = CommandType.ELEMENT_ARGUMENTED;
+
+    }
+
+    public final String name = "add";
+
+
 
     public static Add staticFactory(String[] args,String value){
         Add inst =  new Add();
@@ -20,14 +29,7 @@ public class Add extends Command implements Methods {
         inst.setArgs(args);
         return  inst;
     };
-    public final String name = "add";
 
-
-    public Add() {
-        super();
-        this.commandType = CommandType.ELEMENT_ARGUMENTED;
-
-    }
 
     public Response calling(String[] args, String v) {
         Response resp = super.calling(args, v);
