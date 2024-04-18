@@ -3,11 +3,17 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
-public class Exit extends Command implements methods {
+public class Exit extends Command implements Methods {
 
     public final String name = "exit";
+    public static Exit staticFactory(String[] args,String value){
+        Exit inst =  new Exit();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public Exit() {
         super();

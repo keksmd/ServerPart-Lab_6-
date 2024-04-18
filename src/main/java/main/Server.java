@@ -1,13 +1,14 @@
 package main;
 import exceptions.LOLDIDNTREAD;
-import main.Request;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 import java.net.SocketException;
 import java.nio.channels.*;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -20,6 +21,7 @@ import static utilites.ServerMessaging.nioSend;
 
 public class Server {
     static final LinkedBlockingDeque<Request> requests = new LinkedBlockingDeque<Request>(100);
+    public static HashMap<String, Method> nameToHandleMap = new HashMap<>();
     private static boolean flag = true;
     Selector selector;
     ServerSocketChannel serverSocketChannel;
@@ -47,6 +49,37 @@ public class Server {
 
     public void setSelector(Selector selector) {
         this.selector = selector;
+    }
+    private void setCommands(){
+        this.client.firstMessageFromClient = false;
+        StringBuilder sb = new StringBuilder();
+        getAllClasses("commands").stream().
+                filter(w ->
+                        Arrays.stream(w.getFields()).anyMatch(
+                                x -> (x.getName().equals("commandType"))) &&
+                                Arrays.stream(w.getFields()).anyMatch(
+                                        y -> y.getName().equals("name"))).
+                forEach(w -> {
+                    try {
+                        nameToHandleMap.put(String.valueOf(w.getField("name").get(w.getConstructor().newInstance())),w.getMethod("staticFactory",String[].class,String.class));
+                        sb.
+                                append(w.getField("name").get(w.getConstructor().newInstance())).
+                                append(",").
+                                append(w.getField("commandType").get(w.getConstructor().newInstance()).toString()).
+                                append(";");
+                    } catch (IllegalAccessException | NoSuchFieldException |
+                             NoSuchMethodException |
+                             InstantiationException |
+                             InvocationTargetException e) {
+                        log.info("pizda",e);
+                    }
+                });
+
+        try {
+            nioSend(this.getClientChannel(), sb.toString());
+        } catch (IOException e) {
+        }
+
     }
 
     public void run() throws IOException {
@@ -79,20 +112,10 @@ public class Server {
                             request = nioRead(this.getClientChannel());
 
                         } catch (IOException | LOLDIDNTREAD e) {
-                            /*if (e instanceof LOLDIDNTREAD) {
-                                try {
-                                    this.getClientChannel().close();
-                                } catch (IOException ex) {
-                                    throw new RuntimeException(ex);
-                                }
-                            }
-
-                             */
                             log.error("непрочитали(", e);
                         }
                         if (request != null) {
                             requests.add(request);
-
                             try {
                                 this.getClientChannel().register(this.getSelector(), SelectionKey.OP_WRITE, OP_READ);
                             } catch (ClosedChannelException ignored) {
@@ -100,48 +123,19 @@ public class Server {
                         }
                     }
                     if (key.isWritable()) {
-
                         log.info("ключ оказался писаемым");
                         Request request = requests.poll();
                         if (request != null) {
                             if (request.getMessages().get(0).equals("commands") && client.firstMessageFromClient) {
-                                this.client.firstMessageFromClient = false;
-                                StringBuilder sb = new StringBuilder();
-                                getAllClasses("commands").stream().
-                                        filter(w ->
-                                                Arrays.stream(w.getFields()).anyMatch(
-                                                        x -> (x.getName().equals("commandType"))) &&
-                                                        Arrays.stream(w.getFields()).anyMatch(
-                                                                y -> y.getName().equals("name"))).
-                                        forEach(w -> {
-                                            try {
-                                                sb.append(w.getField("name").get(w.getConstructor().newInstance())).append(",").append(w.getField("commandType").get(w.getConstructor().newInstance()).toString()).append(";");
-                                            } catch (IllegalAccessException | NoSuchFieldException |
-                                                     NoSuchMethodException |
-                                                     InstantiationException |
-                                                     InvocationTargetException e) {
-                                            }
-                                        });
-
-                                try {
-                                    nioSend(this.getClientChannel(), sb.toString());
-                                } catch (IOException e) {
-                                }
-
+                                setCommands();
                             } else {
-
                                 request.commandToExecute = request.commandToExecute.revalidate(request.getMessages().get(0));
-
-
                                 try {
-                                    Thread.sleep(5000);
                                     nioSend(this.getClientChannel(), request.getCommandToExecute().calling(request.commandToExecute.getArgs(), request.getCommandToExecute().getValue()));
                                 } catch (IOException e) {
                                     flag = false;
                                 }
-
                             }
-
                         } else {
                             log.info("null");
                         }

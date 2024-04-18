@@ -7,15 +7,21 @@ import spacemarines.Chapter;
 import spacemarines.Coordinates;
 import spacemarines.SpaceMarine;
 import spacemarines.Weapon;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import java.util.Comparator;
 
 import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
-public class AddIfMax extends Command implements methods {
+public class AddIfMax extends Command implements Methods {
     public final String name = "add_if_max";
+    public static AddIfMax staticFactory(String[] args,String value){
+        AddIfMax inst =  new AddIfMax();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public AddIfMax() {
         super();

@@ -7,12 +7,19 @@ import spacemarines.Chapter;
 import spacemarines.Coordinates;
 import spacemarines.SpaceMarine;
 import spacemarines.Weapon;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
-public class Add extends Command implements methods {
+public class Add extends Command implements Methods {
+
+    public static Add staticFactory(String[] args,String value){
+        Add inst =  new Add();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
     public final String name = "add";
 
 

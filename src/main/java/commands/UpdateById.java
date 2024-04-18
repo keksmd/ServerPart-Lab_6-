@@ -2,13 +2,18 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
-public class UpdateById extends Command implements methods {
+public class UpdateById extends Command implements Methods {
     public final String name = "update_by_id";
-
+    public static UpdateById staticFactory(String[] args,String value){
+        UpdateById inst =  new UpdateById();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
     public UpdateById() {
         super();
         this.commandType = CommandType.ELEMENT_AND_VALUE_ARGUMENTED;

@@ -3,13 +3,18 @@ import main.Command;
 import main.CommandType;
 import main.Response;
 import spacemarines.SpaceMarine;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
-public class Info extends Command implements methods {
+public class Info extends Command implements Methods {
     public final String name = "info";
-
+    public static Info staticFactory(String[] args,String value){
+        Info inst =  new Info();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
     public Info() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

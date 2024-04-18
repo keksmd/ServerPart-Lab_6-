@@ -2,12 +2,18 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
-public class RemoveHead extends Command implements methods {
+public class RemoveHead extends Command implements Methods {
     public final String name = "remove_head";
+    public static RemoveHead staticFactory(String[] args,String value){
+        RemoveHead inst =  new RemoveHead();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public RemoveHead() {
         super();

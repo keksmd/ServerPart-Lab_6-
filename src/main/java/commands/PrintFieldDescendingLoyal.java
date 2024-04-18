@@ -3,12 +3,19 @@ import main.Command;
 import main.CommandType;
 import main.Response;
 import spacemarines.SpaceMarine;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
-public class PrintFieldDescendingLoyal extends Command implements methods {
+public class PrintFieldDescendingLoyal extends Command implements Methods {
+
     public final String name = "print_field_descending_loyal";
+    public static PrintFieldDescendingLoyal staticFactory(String[] args,String value){
+        PrintFieldDescendingLoyal inst =  new PrintFieldDescendingLoyal();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public PrintFieldDescendingLoyal() {
         super();

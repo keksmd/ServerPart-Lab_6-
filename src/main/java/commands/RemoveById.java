@@ -3,13 +3,19 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
-public class RemoveById extends Command implements methods {
+public class RemoveById extends Command implements Methods {
 
     public final String name = "remove_by_id";
+    public static RemoveById staticFactory(String[] args,String value){
+        RemoveById inst =  new RemoveById();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public RemoveById() {
         super();

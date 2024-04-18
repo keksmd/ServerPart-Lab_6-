@@ -2,13 +2,19 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
 
-public class Save extends Command implements methods {
+public class Save extends Command implements Methods {
     public final String name = "save";
+    public static Save staticFactory(String[] args,String value){
+        Save inst =  new Save();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public Save() {
         super();

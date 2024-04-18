@@ -2,12 +2,18 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import static main.App.collectionManager;
 
-public class FilterHeight extends Command implements methods {
+public class FilterHeight extends Command implements Methods {
     public final String name = "filter_greater_than_height";
+    public static FilterHeight staticFactory(String[] args,String value){
+        FilterHeight inst =  new FilterHeight();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public FilterHeight() {
         super();

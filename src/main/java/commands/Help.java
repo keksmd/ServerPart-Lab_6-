@@ -2,16 +2,21 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 
-public class Help extends Command implements methods {
+public class Help extends Command implements Methods {
     public final String name = "help";
-
+    public static Help staticFactory(String[] args,String value){
+        Help inst =  new Help();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
     public Help() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

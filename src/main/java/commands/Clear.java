@@ -5,10 +5,15 @@ import main.*;
 
 import static main.App.collectionManager;
 
-public class Clear extends Command implements methods {
+public class Clear extends Command implements Methods {
 
     public final String name = "clear";
-
+    public static Clear staticFactory(String[] args,String value){
+        Clear inst =  new Clear();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
     public Clear() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

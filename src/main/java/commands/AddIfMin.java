@@ -7,15 +7,22 @@ import spacemarines.Chapter;
 import spacemarines.Coordinates;
 import spacemarines.SpaceMarine;
 import spacemarines.Weapon;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import java.util.Comparator;
 
 import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
-public class AddIfMin extends Command implements methods {
+public class AddIfMin extends Command implements Methods {
     public final String name = "add_if_min";
+
+    public static AddIfMin staticFactory(String[] args,String value){
+        AddIfMin inst =  new AddIfMin();
+        inst.setValue(value);
+        inst.setArgs(args);
+        return  inst;
+    };
 
     public AddIfMin() {
         super();

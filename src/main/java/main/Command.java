@@ -5,37 +5,18 @@
 package main;
 
 import commands.*;
-import commands.UpdateById;
-import commands.Add;
-import commands.AddIfMax;
-import commands.AddIfMin;
-import commands.FilterHeight;
-import commands.RemoveById;
-import main.CommandType;
-import main.Response;
-import utilites.interfaces.methods;
+import utilites.interfaces.Methods;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
-public class Command implements methods {
+public class Command implements Methods {
     public CommandType commandType = null;
-    /**
-     * Переменная,где хранится ссылка на наследника {@link Command},который и реализует нужную команду
-     */
 
     public String[] args;
     String value;
     private String name = "command";
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     /**
      * общий для всех классов-комманд,являющихся наследниками {@link Command}
      * метод,реализующий взаимодействие с коллекцией
@@ -51,6 +32,16 @@ public class Command implements methods {
 
     }
 
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+
+
     public CommandType getCommandType() {
         return commandType;
     }
@@ -60,7 +51,7 @@ public class Command implements methods {
     }
 
     public Command revalidate(String name) {
-        return commandReader(name).castInto(this);
+        return extractCommand(name).castInto(this);
     }
 
     public Command castInto(Command name) {
@@ -118,54 +109,33 @@ public class Command implements methods {
      * Метод, определяющий команду по вводу str
      *
      * @param str - текстовое значение команды
-     * @return объект, поле cmd,которого имеет реализацию команды переданной в {@link Command#commandReader(String)}
+     * @return объект, поле cmd,которого имеет реализацию команды переданной в {@link Command#extractCommand(String)}
      */
-    public Command commandReader(String str) {
-        Command cmd;
-        String[] words = str.split(" ");
-        if (words.length == 1) {
-            cmd = switch (str.toLowerCase()) {
-                case "add" -> new Add();
-                case "add_if_max" -> new AddIfMax();
-                case "add_if_min" -> new AddIfMin();
-                case "help" -> new Help();
-                case "clear" -> new Clear();
-                case "exit" -> new Exit();
-                case "remove_head" -> new RemoveHead();
-                case "group_counting_by_weapon_type" -> new GroupByWeapon();
-                case "print_field_descending_loyal" -> new PrintFieldDescendingLoyal();
-                case "show" -> new Show();
-                case "info" -> new Info();
-                default -> new NotFound();
-            };
-        } else if (words.length == 2) {
-            switch (words[0].toLowerCase()) {
-                case "update_by_id":
-                    UpdateById upd = new UpdateById();
-                    upd.setValue(words[1]);
-                    cmd = upd;
-                    break;
-
-                case "remove_by_id":
-                    RemoveById rmd = new RemoveById();
-                    rmd.setValue(words[1]);
-                    cmd = rmd;
-
-                    break;
-                case "filter_greater_than_height":
-                    FilterHeight fh = new FilterHeight();
-                    fh.setValue(words[1]);
-                    cmd = fh;
-                    break;
-                default:
-                    cmd = new NotFound();
+    public static Command extractCommand(String str){
+        String[] tokens = str.split(" ");
+        String prefix = "";
+        for(int i = 0;i< tokens.length;i++){
+            prefix+=tokens[i];
+            if(Server.nameToHandleMap.containsKey(prefix)) {
+                Method factory = Server.nameToHandleMap.get(prefix);
+                if (i < tokens.length - 1) {
+                    try {
+                        return (Command)factory.invoke(null, tokens[i + 1], null);
+                    } catch (IllegalAccessException | InvocationTargetException e) {
+                        throw new RuntimeException(e);
+                    }
+                }else{
+                    try {
+                        return (Command) factory.invoke(null, null, null);
+                    } catch (IllegalAccessException | InvocationTargetException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
             }
-        } else {
-
-            cmd = new NotFound();
+            prefix+=" ";
         }
-
-        return cmd;
+        return new NotFound();
 
     }
+
 }
