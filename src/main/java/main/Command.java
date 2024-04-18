@@ -109,7 +109,7 @@ public class Command implements Methods {
      * Метод, определяющий команду по вводу str
      *
      * @param str - текстовое значение команды
-     * @return объект, поле cmd,которого имеет реализацию команды переданной в {@link Command#extractCommand(String)}
+     * @return объект, поле cmd,которого имеет реализацию команды переданной в аргументах
      */
     public static Command extractCommand(String str){
         String[] tokens = str.split(" ");

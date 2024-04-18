@@ -4,11 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3cbf363-0553-4ef7-b861-8e90300aae2c" name="Changes" comment="init2" />
+    <list default="true" id="e3cbf363-0553-4ef7-b861-8e90300aae2c" name="Changes" comment="namings,switch-&gt;map">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Add.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/AddIfMax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/AddIfMax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/AddIfMin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/AddIfMin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Clear.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Clear.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Exit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Exit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/FilterHeight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/FilterHeight.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/GroupByWeapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/GroupByWeapon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Help.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Help.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/PrintFieldDescendingLoyal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/PrintFieldDescendingLoyal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveById.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveHead.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveHead.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Save.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Save.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Show.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/commands/UpdateById.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/UpdateById.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Command.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Request.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Response.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/main/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Server.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +63,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="main.Server" />
+      <recent name="main.Command" />
     </key>
   </component>
   <component name="RunManager">
@@ -69,6 +104,39 @@
       <option name="presentableId" value="Default" />
       <updated>1713120003390</updated>
     </task>
+    <task id="LOCAL-00001" summary="init2">
+      <option name="closed" value="true" />
+      <created>1713122594426</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713122594426</updated>
+    </task>
+    <task id="LOCAL-00002" summary="init2">
+      <option name="closed" value="true" />
+      <created>1713122724347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1713122724347</updated>
+    </task>
+    <task id="LOCAL-00003" summary="namings,switch-&gt;map">
+      <option name="closed" value="true" />
+      <created>1713471915096</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1713471915097</updated>
+    </task>
+    <task id="LOCAL-00004" summary="namings,switch-&gt;map">
+      <option name="closed" value="true" />
+      <created>1713472139563</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1713472139563</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +158,32 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init2" />
-    <option name="LAST_COMMIT_MESSAGE" value="init2" />
+    <MESSAGE value="namings,switch-&gt;map" />
+    <option name="LAST_COMMIT_MESSAGE" value="namings,switch-&gt;map" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Server.java</url>
+          <line>52</line>
+          <properties class="main.Server" method="setCommands">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Server.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Server.java</url>
+          <line>78</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
