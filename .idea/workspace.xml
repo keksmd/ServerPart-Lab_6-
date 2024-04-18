@@ -4,36 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3cbf363-0553-4ef7-b861-8e90300aae2c" name="Changes" comment="namings,switch-&gt;map">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Add.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Add.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/AddIfMax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/AddIfMax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/AddIfMin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/AddIfMin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Clear.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Clear.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Exit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Exit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/FilterHeight.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/FilterHeight.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/GroupByWeapon.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/GroupByWeapon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Help.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Help.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Info.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/PrintFieldDescendingLoyal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/PrintFieldDescendingLoyal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveById.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveById.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/RemoveHead.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/RemoveHead.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Save.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Save.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/Show.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/Show.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/commands/UpdateById.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/commands/UpdateById.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Command.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Command.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Request.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Request.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Response.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Response.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/Server.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/main/Server.class" afterDir="false" />
-    </list>
+    <list default="true" id="e3cbf363-0553-4ef7-b861-8e90300aae2c" name="Changes" comment="namings,switch-&gt;map" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager" show_ignored="true" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -136,7 +113,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713472139563</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="namings,switch-&gt;map">
+      <option name="closed" value="true" />
+      <created>1713472351902</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1713472351902</updated>
+    </task>
+    <task id="LOCAL-00006" summary="namings,switch-&gt;map">
+      <option name="closed" value="true" />
+      <created>1713472586575</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1713472586579</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
