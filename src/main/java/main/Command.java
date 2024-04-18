@@ -127,7 +127,7 @@ public class Command implements Methods {
                 }else{
                     try {
                         return (Command) factory.invoke(null, null, null);
-                    } catch (IllegalAccessException | InvocationTargetException e) {
+                    } catch (IllegalAccommiucessException | InvocationTargetException e) {
                         throw new RuntimeException(e);
                     }
                 }
