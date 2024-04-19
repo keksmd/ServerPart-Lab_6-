@@ -2,11 +2,11 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import static main.App.collectionManager;
 
-public class RemoveHead extends Command implements Methods {
+public class RemoveHead extends Command implements Callable {
     public RemoveHead() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

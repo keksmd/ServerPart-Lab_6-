@@ -7,14 +7,14 @@ import spacemarines.Chapter;
 import spacemarines.Coordinates;
 import spacemarines.SpaceMarine;
 import spacemarines.Weapon;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import java.util.Comparator;
 
 import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
-public class AddIfMin extends Command implements Methods {
+public class AddIfMin extends Command implements Callable {
     public AddIfMin() {
         super();
         this.commandType = CommandType.ELEMENT_ARGUMENTED;

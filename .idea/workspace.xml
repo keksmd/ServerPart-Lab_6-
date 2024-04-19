@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e3cbf363-0553-4ef7-b861-8e90300aae2c" name="Changes" comment="namings,switch-&gt;map" />
+    <list default="true" id="e3cbf363-0553-4ef7-b861-8e90300aae2c" name="Changes" comment="namings,switch-&gt;map">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Add.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Add.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/AddIfMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/AddIfMax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/AddIfMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/AddIfMin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Clear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Clear.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Exit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Exit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/FilterHeight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/FilterHeight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/GroupByWeapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/GroupByWeapon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Help.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Help.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/PrintFieldDescendingLoyal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/PrintFieldDescendingLoyal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/RemoveHead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/RemoveHead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Save.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Save.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/Show.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/Show.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/commands/UpdateById.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/commands/UpdateById.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilites/interfaces/Methods.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilites/interfaces/Callable.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +40,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -129,7 +152,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713472586579</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="namings,switch-&gt;map">
+      <option name="closed" value="true" />
+      <created>1713475235096</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1713475235096</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,23 +188,9 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/main/Server.java</url>
-          <line>52</line>
-          <properties class="main.Server" method="setCommands">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/main/Server.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/main/Server.java</url>
-          <line>78</line>
+          <line>74</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

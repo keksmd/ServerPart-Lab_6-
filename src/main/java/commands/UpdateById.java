@@ -2,11 +2,11 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import static main.App.collectionManager;
 
-public class UpdateById extends Command implements Methods {
+public class UpdateById extends Command implements Callable {
     public UpdateById() {
         super();
         this.commandType = CommandType.ELEMENT_AND_VALUE_ARGUMENTED;

@@ -2,14 +2,14 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
 
-public class Help extends Command implements Methods {
+public class Help extends Command implements Callable {
     public Help() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

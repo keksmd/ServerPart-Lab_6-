@@ -4,13 +4,13 @@ import main.Command;
 import main.CommandType;
 import main.Response;
 import spacemarines.Weapon;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import java.util.Arrays;
 
 import static main.App.collectionManager;
 
-public class GroupByWeapon extends Command implements Methods {
+public class GroupByWeapon extends Command implements Callable {
     public GroupByWeapon() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

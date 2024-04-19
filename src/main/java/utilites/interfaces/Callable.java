@@ -2,6 +2,6 @@ package utilites.interfaces;
 
 import main.Response;
 
-public interface Methods {
+public interface Callable {
     Response calling(String[] args, String v);
 }

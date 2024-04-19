@@ -5,7 +5,7 @@ import main.*;
 
 import static main.App.collectionManager;
 
-public class Clear extends Command implements Methods {
+public class Clear extends Command implements Callable {
 
 
     public Clear() {

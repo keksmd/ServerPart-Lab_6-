@@ -3,11 +3,11 @@ import main.Command;
 import main.CommandType;
 import main.Response;
 import spacemarines.SpaceMarine;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import static main.App.collectionManager;
 
-public class Info extends Command implements Methods {
+public class Info extends Command implements Callable {
     public Info() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

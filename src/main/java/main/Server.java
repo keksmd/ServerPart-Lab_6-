@@ -42,6 +42,10 @@ public class Server{
         }
     }
 
+    /**
+     * Метод,задающий команды,которыми будут пользоваться клиент <br>
+     * </>и сервер из пакета commands, где лежат реализации команд
+     */
 
     private void setCommands(){
         this.client.firstMessageFromClient = false;
@@ -74,6 +78,11 @@ public class Server{
 
     }
 
+    /**
+     * Метод,запускающий работу объекта сервера
+     * @throws IOException в случае ошибки при преме-передаче сообщений
+     */
+
     public void run() throws IOException {
 
         while (true) {//true
@@ -82,7 +91,7 @@ public class Server{
             Iterator<SelectionKey> keysIterator = this.getSelector().selectedKeys().iterator();
             try {
                 while (keysIterator.hasNext()) {
-                    this.serverCycleStep(keysIterator.next());
+                    this.handleKey(keysIterator.next());
                     keysIterator.remove();
                 }
             } catch (SocketException | ClosedChannelException e) {
@@ -93,7 +102,13 @@ public class Server{
         }
 
     }
-    private void serverCycleStep(SelectionKey key) throws IOException {
+
+    /**
+     * метод, определяющий готовность ключа к тем или иным действиям, и вызывающий методы их реализации
+     * @param key
+     * @throws IOException (пробрасывает выше) в случае ошибки при преме-передаче сообщений
+     */
+    private void handleKey(SelectionKey key) throws IOException {
         if (key.isAcceptable()) {
             this.handleAcception();
         }else if (key.isReadable()) {
@@ -102,6 +117,11 @@ public class Server{
             this.handleWrite();
         }
     }
+
+    /**
+     * метод обработки подключения ключа
+     * @throws IOException
+     */
     private void handleAcception() throws IOException{
         log.info("ключ оказался доступным");
         this.setClientChannel(this.getServerSocketChannel().accept());
@@ -109,6 +129,10 @@ public class Server{
         this.getClientChannel().register(this.getSelector(), OP_READ);
         log.info("Зарегали на селектор с read");
     }
+    /**
+     * метод чтения сообщения ключа
+     */
+
     private void handleRead(){
         Request request = null;
         log.info("ключ оказался читаемым");
@@ -124,6 +148,10 @@ public class Server{
             } catch (ClosedChannelException ignored) {}
         }
     }
+    /**
+     * метод обработки запроса клиента и отправки ответа
+     * @throws IOException
+     */
     private void handleWrite() throws  IOException{
         log.info("ключ оказался писаемым");
         Request request = requests.poll();
@@ -131,10 +159,15 @@ public class Server{
             if (request.getMessages().get(0).equals("commands") && client.firstMessageFromClient) {
                 setCommands();
             } else {
-                request.commandToExecute = request.commandToExecute.revalidate(request.getMessages().get(0));
                 try {
+                request.commandToExecute = request.commandToExecute.revalidate(request.getMessages().get(0));
+
                     nioSend(this.getClientChannel(), request.getCommandToExecute().calling(request.commandToExecute.getArgs(), request.getCommandToExecute().getValue()));
+
+                } catch (InvocationTargetException | IllegalAccessException e) {
+                    log.info("Ошибка: неверно реализована команда",e);
                 } catch (IOException e) {
+                    log.info("неудачно отправили сообщение", e);
                     flag = false;
                 }
             }

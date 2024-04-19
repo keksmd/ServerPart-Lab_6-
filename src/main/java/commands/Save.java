@@ -2,12 +2,12 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import static main.App.collectionManager;
 
 
-public class Save extends Command implements Methods {
+public class Save extends Command implements Callable {
     public Save() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

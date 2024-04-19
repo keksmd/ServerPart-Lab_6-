@@ -3,11 +3,11 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import static main.App.collectionManager;
 
-public class RemoveById extends Command implements Methods {
+public class RemoveById extends Command implements Callable {
     public RemoveById() {
         super();
         this.commandType = CommandType.VALUE_ARGUMENTED;

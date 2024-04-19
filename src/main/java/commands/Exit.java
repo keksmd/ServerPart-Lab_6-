@@ -3,9 +3,9 @@ package commands;
 import main.Command;
 import main.CommandType;
 import main.Response;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
-public class Exit extends Command implements Methods {
+public class Exit extends Command implements Callable {
     public Exit() {
         super();
         this.commandType = CommandType.WITHOUT_ARGUMENTS;

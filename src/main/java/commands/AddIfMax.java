@@ -7,14 +7,14 @@ import spacemarines.Chapter;
 import spacemarines.Coordinates;
 import spacemarines.SpaceMarine;
 import spacemarines.Weapon;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import java.util.Comparator;
 
 import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
-public class AddIfMax extends Command implements Methods {
+public class AddIfMax extends Command implements Callable {
     public AddIfMax() {
         super();
         this.commandType = CommandType.ELEMENT_ARGUMENTED;

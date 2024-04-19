@@ -5,13 +5,13 @@
 package main;
 
 import commands.*;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-public class Command implements Methods {
+public class Command implements Callable {
     public CommandType commandType = null;
 
     public String[] args;
@@ -33,7 +33,7 @@ public class Command implements Methods {
     }
 
 
-    public Command revalidate(String name) {
+    public Command revalidate(String name) throws InvocationTargetException, IllegalAccessException {
         return extractCommand(name).castInto(this);
     }
 
@@ -51,12 +51,12 @@ public class Command implements Methods {
         return answer;
     }
     /**
-     * Метод, определяющий команду по вводу str
+     * Метод, возвращающий команду,определяемую по текстовому запросу
      *
      * @param str - текстовое значение команды
-     * @return объект, поле cmd,которого имеет реализацию команды переданной в аргументах
+     * @return объект, реализующий команду
      */
-    public static Command extractCommand(String str){
+    public static Command extractCommand (String str) throws InvocationTargetException, IllegalAccessException {
         String[] tokens = str.split(" ");
         String prefix = "";
         for(int i = 0;i< tokens.length;i++){
@@ -64,17 +64,11 @@ public class Command implements Methods {
             if(Server.nameToHandleMap.containsKey(prefix)) {
                 Method factory = Server.nameToHandleMap.get(prefix);
                 if (i < tokens.length - 1) {
-                    try {
+
                         return (Command)factory.invoke(null, tokens[i + 1], null);
-                    } catch (IllegalAccessException | InvocationTargetException e) {
-                        throw new RuntimeException(e);
-                    }
+
                 }else{
-                    try {
-                        return (Command) factory.invoke(null, null, null);
-                    } catch (IllegalAccessException | InvocationTargetException e) {
-                        throw new RuntimeException(e);
-                    }
+                    return (Command) factory.invoke(null, null, null);
                 }
             }
             prefix+=" ";

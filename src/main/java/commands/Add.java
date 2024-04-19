@@ -7,12 +7,12 @@ import spacemarines.Chapter;
 import spacemarines.Coordinates;
 import spacemarines.SpaceMarine;
 import spacemarines.Weapon;
-import utilites.interfaces.Methods;
+import utilites.interfaces.Callable;
 
 import static main.App.collectionManager;
 import static utilites.CheckingReader.checkyRead;
 
-public class Add extends Command implements Methods {
+public class Add extends Command implements Callable {
     public Add() {
         super();
         this.commandType = CommandType.ELEMENT_ARGUMENTED;
